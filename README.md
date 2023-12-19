@@ -19,7 +19,7 @@ MFUEiu4sieDKz#M^Gwx#ev2U
 ```
 ### Generate a random number 0-9
 ```
- $ strgen -l 24 -c 4 -e
+ $ strgen -l 1 -c 1234567890
 8
 ```
 ### Generate a list of 10 passwords and write them to a file
