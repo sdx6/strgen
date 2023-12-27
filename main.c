@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
     else if ((strcmp(arg, "-r") == 0) || (strcmp(arg, "--repeat"))  == 0) carg = 4;
     else if ((strcmp(arg, "-s") == 0) || (strcmp(arg, "--silent"))  == 0) carg = 5;
 
-    switch (carg)
+        switch (carg)
     {
       case 1:
         if (argv[v] != NULL) len = atoi(argv[v]);
@@ -61,13 +61,32 @@ int main(int argc, char* argv[])
             }
           else
           {
-            if      ((strcmp(argv[v], "1")) == 0) chars = "abcdefghijklmnopqrstuvwxyz";
-            else if ((strcmp(argv[v], "2")) == 0) chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            else if ((strcmp(argv[v], "3")) == 0) chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            else if ((strcmp(argv[v], "4")) == 0) chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()";
-            else if ((strcmp(argv[v], "5")) == 0) chars = "1234567890";
-            else if ((strcmp(argv[v], "6")) == 0) chars = "1234567890!@#$%^&*()";
-            else chars = argv[v];
+            switch (atoi(argv[v]))
+            {
+              case 1:
+                chars = "abcdefghijklmnopqrstuvwxyz";
+              break;
+
+              case 2:
+                chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+              break;
+
+              case 3:
+                chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+              break;
+
+              case 4:
+                chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()";
+              break;
+
+              case 5:
+                chars = "1234567890";
+              break;
+
+              case 6:
+                chars = "1234567890!@#$%^&*()";
+              break;
+            }
           }
         }
         else len = 0;
